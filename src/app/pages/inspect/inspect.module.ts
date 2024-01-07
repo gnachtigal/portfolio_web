@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { InspectComponent } from './inspect.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    InspectComponent
+  ],
   imports: [
     CommonModule
   ]

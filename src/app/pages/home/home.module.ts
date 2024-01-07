@@ -6,7 +6,12 @@ import { ChangelogComponent } from '../../components/changelog/changelog.compone
 import { HomeComponent } from './home.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent,
+    ChangelogComponent,
+    PlaygroundComponent,
+    DescriptionComponent
+  ],
   imports: [
     CommonModule, 
   ]

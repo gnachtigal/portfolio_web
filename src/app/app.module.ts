@@ -8,17 +8,21 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TabsComponent } from './components/tabs/tabs.component';
-import { PagesModule } from './pages/home.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
     HeaderComponent,
     FooterComponent,
     TabsComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterOutlet, CommonModule, PagesModule
+    CommonModule
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    TabsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

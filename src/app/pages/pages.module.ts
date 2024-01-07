@@ -3,18 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { InspectModule } from './inspect/inspect.module';
 import { AboutModule } from './about/about.module';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
-import { InspectComponent } from './inspect/inspect.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AboutComponent,
-    HomeComponent,
-    InspectComponent
   ],
   imports: [
-    CommonModule, AboutModule, HomeModule, InspectModule
-  ]
+    CommonModule, RouterModule, AboutModule, HomeModule, InspectModule
+  ],
 })
 export class PagesModule { }
