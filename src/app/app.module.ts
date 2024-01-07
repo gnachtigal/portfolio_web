@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -17,7 +17,7 @@ import { PagesModule } from './pages/pages.module';
     TabsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, RouterOutlet, RouterLink, RouterLinkActive
   ],
   exports: [
     HeaderComponent,
