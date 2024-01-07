@@ -1,0 +1,32 @@
+.header{
+    padding: 10px 50px;
+
+    .name{
+        font-family: 'Bebas', 'sans-serif';
+        font-size: 100px;
+        font-weight: 500;
+        line-height: 90%;
+        margin-bottom: 10px;
+
+        a{
+            font-family: 'Bebas', 'sans-serif';
+            &::after{
+                content: none;
+            }
+        }
+    }
+    
+    .role{
+        font-family: 'Bebas', 'sans-serif';
+        font-size: 30px;
+        font-weight: 100;
+        
+        a{
+            font-family: 'Bebas', 'sans-serif';
+            &::after{
+                content: none;
+            }
+        }
+    }
+}
+

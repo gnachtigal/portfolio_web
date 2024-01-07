@@ -1,1 +1,27 @@
+@import "./styles/fonts.scss";
+
 /* You can add global styles to this file, and also import other style files */
+html{
+    background-color: #000;
+    background: url(./assets/imgs/bg-light.jpg);
+    font-family: sans-serif;
+}
+a::after{
+    content: "";
+    display: inline-block;
+    background-image: url('assets/icons/small-arrow.svg');
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 8px;
+    margin-left: 4px;
+    opacity: .7;
+}
+a, p, h1, h2, h3{
+    font-family: 'SourceRegular';
+    color: #fff;
+}
+a, p, h1, h2, h3{
+    &.gray{
+        color: #BEBEBE;
+    }
+}
