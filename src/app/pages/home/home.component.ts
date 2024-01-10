@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.appService?.getData().then(result => {
-      this.resumeData = result.data;
+      this.resumeData = result.description;
     });
   }
 

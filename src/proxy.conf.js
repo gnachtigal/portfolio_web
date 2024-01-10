@@ -1,9 +1,10 @@
+var defaultTarget = 'https://localhost:5001/api';
 const PROXY_CONFIG = [
   {
     context: [
-      "/resume",
+      "/api",
     ],
-    target: "https://localhost:5001",
+    target: defaultTarget,
     secure: false
   }
 ]
