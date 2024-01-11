@@ -13,10 +13,10 @@ export class AppService {
     this.httpClient = httpClient;
   }
 
-  getData(): Promise<Profile> {
+  getData(section: string): Promise<Profile> {
     debugger;
     return new Promise<Profile>((resolve, reject) => {
-      this.httpClient.get<Profile>('api/Profile?section=description').subscribe(result => {
+      this.httpClient.get<Profile>(`api/Profile?section=${section}`).subscribe(result => {
         this.profileData = result;
         resolve(result);
       }, error => {

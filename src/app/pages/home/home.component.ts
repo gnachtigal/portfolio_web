@@ -8,15 +8,15 @@ import { SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public resumeData?: SafeHtml;
+  public description?: SafeHtml;
 
   constructor(
     private appService: AppService
     ) {}
 
   ngOnInit(): void {
-    this.appService?.getData().then(result => {
-      this.resumeData = result.description;
+    this.appService?.getData("description").then(result => {
+      this.description = result.description;
     });
   }
 

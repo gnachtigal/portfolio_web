@@ -7,12 +7,12 @@ import { SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./description.component.scss']
 })
 export class DescriptionComponent implements OnInit {
-  @Input() resumeData?: SafeHtml;
+  @Input() description?: SafeHtml;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.resumeData);
+    
   }
 
 }
