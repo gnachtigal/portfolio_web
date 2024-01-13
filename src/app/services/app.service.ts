@@ -6,18 +6,26 @@ import { SafeHtml } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class AppService {
-  public profileData?: Profile;
   private httpClient: HttpClient;
   
   constructor(httpClient: HttpClient) {
     this.httpClient = httpClient;
   }
 
-  getData(section: string): Promise<Profile> {
-    debugger;
+  getProfileData(section: string): Promise<Profile> {
     return new Promise<Profile>((resolve, reject) => {
       this.httpClient.get<Profile>(`api/Profile?section=${section}`).subscribe(result => {
-        this.profileData = result;
+        resolve(result);
+      }, error => {
+        console.error(error);
+        reject(error);
+      });
+    });
+  }
+
+  getChangelog(): Promise<Changelog> {
+    return new Promise<Changelog>((resolve, reject) => {
+      this.httpClient.get<Changelog>(`api/Profile/Changelog`).subscribe(result => {
         resolve(result);
       }, error => {
         console.error(error);
@@ -30,4 +38,8 @@ export class AppService {
 
 interface Profile {
   description: SafeHtml;
+}
+
+interface Changelog {
+  changes: SafeHtml;
 }

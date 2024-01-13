@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-changelog',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./changelog.component.scss']
 })
 export class ChangelogComponent implements OnInit {
+  @Input() changes?: SafeHtml;
 
   constructor() { }
 

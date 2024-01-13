@@ -9,15 +9,19 @@ import { SafeHtml } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
   public description?: SafeHtml;
+  public changelog?: SafeHtml;
 
   constructor(
     private appService: AppService
     ) {}
 
   ngOnInit(): void {
-    this.appService?.getData("description").then(result => {
+    this.appService?.getProfileData("description").then(result => {
       this.description = result.description;
     });
-  }
 
+    this.appService?.getChangelog().then(result => {
+      this.changelog = result.changes;
+    });
+  }
 }
