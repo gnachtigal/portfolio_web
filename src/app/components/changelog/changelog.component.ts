@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
+import { Commit } from '../../models/app.model.commit';
 
 @Component({
   selector: 'app-changelog',
@@ -7,7 +8,7 @@ import { SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./changelog.component.scss']
 })
 export class ChangelogComponent implements OnInit {
-  @Input() changes?: SafeHtml;
+  @Input() commits?: Commit[];
 
   constructor() { }
 

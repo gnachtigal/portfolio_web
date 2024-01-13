@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
 import { SafeHtml } from '@angular/platform-browser';
+import { Commit } from '../models/app.model.commit';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,9 @@ export class AppService {
     });
   }
 
-  getChangelog(): Promise<Changelog> {
-    return new Promise<Changelog>((resolve, reject) => {
-      this.httpClient.get<Changelog>(`api/Profile/Changelog`).subscribe(result => {
+  getChangelog(): Promise<Commit[]> {
+    return new Promise<Commit[]>((resolve, reject) => {
+      this.httpClient.get<Commit[]>(`api/Profile/Changelog`).subscribe(result => {
         resolve(result);
       }, error => {
         console.error(error);

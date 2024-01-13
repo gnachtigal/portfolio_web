@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../../services/app.service';
 import { SafeHtml } from '@angular/platform-browser';
+import { Commit } from '../../models/app.model.commit';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { SafeHtml } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit {
   public description?: SafeHtml;
-  public changelog?: SafeHtml;
+  public commits?: Commit[];
 
   constructor(
     private appService: AppService
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
     });
 
     this.appService?.getChangelog().then(result => {
-      this.changelog = result.changes;
+      this.commits = result;
     });
   }
 }
