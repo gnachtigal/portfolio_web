@@ -2,10 +2,15 @@ var defaultTarget = 'https://localhost:5001/api';
 const PROXY_CONFIG = [
   {
     context: [
-      "/api",
+      "api/**",
     ],
     target: defaultTarget,
-    secure: false
+    secure: false,
+    changeOrigin: true,
+    logLevel: "debug",
+    pathRewrite: {
+      "^/api": ""
+    }
   }
 ]
 
